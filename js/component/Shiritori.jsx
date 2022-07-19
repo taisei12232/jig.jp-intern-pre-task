@@ -5,12 +5,17 @@ import { fetchSinceWords } from "./getSinceWords.jsx";
 const Shiritori = () => {
     const [word,setWord] = useState("")
     const [resSentence,setResSentence] = useState("")
+    const {data} = fetchSinceWords("world")
+    if(!data) return(<div>loading...</div>);
     const handleWord = (e) => {
+        if(data["words"].slice(-1)[0].slice(-1)[0] === "ん"){
+            setResSentence("最後に「ん」がつきました。Resetを押して最初からやり直してください。")
+            setWord("")
+            return
+        }
         setWord(e.target.value);
         setResSentence("");
     }
-    const {data} = fetchSinceWords("world")
-    if(!data) return(<div>loading...</div>);
     const inputCheck = (e) => {
         e.preventDefault()
         if(word.length === 0) return 
@@ -79,7 +84,8 @@ const Shiritori = () => {
             {data["words"].map(word => (
                 <div className="shiritori-word">
                     <div className="shiritoriword" key={word}>{word}</div>
-                    <div className="arrow">→</div>
+                    {word.slice(-1)[0] === "ん" ? <div className="arrow">❌</div>
+                        : <div className="arrow">→</div>}
                 </div>
             ))}
         </div>

@@ -8,6 +8,11 @@ const Private = () => {
     const query2 = new URLSearchParams(search);
     const {data} = fetchSinceWords(query2.get("watchword"))
     const handleWord = (e) => {
+        if(data["words"].slice(-1)[0].slice(-1)[0] === "ん"){
+            setResSentence("最後に「ん」がつきました。Resetを押して最初からやり直してください。")
+            setWord("")
+            return
+        }
         setWord(e.target.value);
         setResSentence("")
     }
@@ -83,7 +88,8 @@ const Private = () => {
             {data["words"].map(word => (
                 <div className="shiritori-word">
                     <div className="shiritoriword" key={word}>{word}</div>
-                    <div className="arrow">→</div>
+                    {word.slice(-1)[0] === "ん" ? <div className="arrow">❌</div>
+                        : <div className="arrow">→</div>}
                 </div>
             ))}
         </div>
