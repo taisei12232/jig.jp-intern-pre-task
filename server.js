@@ -41,7 +41,12 @@ serve(async (req) => {
       const docRef = doc(db, "shiritori", reqJson.id);
       const response = await getDoc(docRef)
       const data = response.data()
-      if(data.words.slice(-1)[0] === reqJson.word[0]){
+      if(data.words.length === 0){
+        data.words.push(reqJson.word)
+        console.log(data)
+        await updateDoc(docRef,{words:data.words})
+      }
+      else if(data.words.slice(-1)[0] === reqJson.word[0]){
         data.words.push(reqJson.word)
         console.log(data)
         await updateDoc(docRef,{words:data.words})
