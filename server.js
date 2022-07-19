@@ -15,12 +15,12 @@ const firebaseConfig = JSON.parse(Deno.env.get("FIREBASE_CONFIG"));
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-console.log("Listening on http://localhost:8080");
+//console.log("Listening on http://localhost:8080");
 
 serve(async (req) => {
 
   const pathname = new URL(req.url).pathname;
-  console.log(req)
+  //console.log(req)
   if (req.method === "GET" && dirname(pathname) === "/watchword") {
     const docRef = doc(db, "shiritori", decodeURI(basename(pathname)));
     const response = await getDoc(docRef)
@@ -37,19 +37,23 @@ serve(async (req) => {
   }
   else if(pathname === "/nextword" && req.method === "POST"){
       const reqJson = await req.json()
-      console.log(reqJson.id)
+      //console.log(reqJson.id)
       const docRef = doc(db, "shiritori", reqJson.id);
       const response = await getDoc(docRef)
       const data = response.data()
       if(data.words.length === 0){
         data.words.push(reqJson.word)
-        console.log(data)
+        //console.log(data)
         await updateDoc(docRef,{words:data.words})
       }
       else if(data.words.slice(-1)[0] === reqJson.word[0]){
         data.words.push(reqJson.word)
-        console.log(data)
+        //console.log(data)
         await updateDoc(docRef,{words:data.words})
+      }
+      if(data.words.length !== 0){
+        console.log(data.words.slice(-1)[0])
+        console.log(reqJson.word[0])
       }
       return new Response("200", {
           headers: {
