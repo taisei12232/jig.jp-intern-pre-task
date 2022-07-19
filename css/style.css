@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #38C7FF;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+.app {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.home-title {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+  align-items: center;
+}
+
+.component-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position :absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.btn-wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn-wrap button {
+  background-color: white;
+  border-radius: 20px;
+  font-size: 24px;
+  padding: 5px 16px;
+}
+
+.wordInput {
+  width: 50vw;
+  border-radius: 2vw;
+  font-size: 20px;
+  padding: 10px;
+  margin-top: 20vh !important;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.back {
+  width: 4vw;
+  height: 4vw;
+  border-radius: 2vw;
+  margin: 1vw;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vw;
+  top: 0;
+}
+
+.back > img
+{
+  width: 4vw;
+}
+
+.component-modal-watchword {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-watchword {
+  background-color: #FFF;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding:20vh 20vw;
+  border-radius: 50px;
+}
+
+.inputwatchword {
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 10px auto;
+  font-size: 24px;
+}
+
+.btn-room-submit {
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+.watchword {
+  text-align: end;
+  margin: 5px;
+}
+
+.words {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10vh;
+}
+
+.words > div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+.shiritoriword {
+  border-radius: 50px;
+  background-color: greenyellow;
+  border: #333 solid;
+  padding: 5px;
+}
+
+.arrow {
+  text-align: center;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.alert {
+  text-align: center;
+  color: red;
+  font-size: 16px;
+}
+
+.reset {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.reset-btn {
+  color: red;
+  border-radius: 50px;
+  font-size:24px;
+  padding:5px;
+  margin:10px;
+}
+
+.submit-wraper {
+  text-align: center;
+}
