@@ -46,14 +46,10 @@ serve(async (req) => {
         //console.log(data)
         await updateDoc(docRef,{words:data.words})
       }
-      else if(data.words.slice(-1)[0] === reqJson.word[0]){
+      else if(data.words.slice(-1)[0].slice(-1)[0] === reqJson.word[0]){
         data.words.push(reqJson.word)
         //console.log(data)
         await updateDoc(docRef,{words:data.words})
-      }
-      if(data.words.length !== 0){
-        console.log(data.words.slice(-1)[0])
-        console.log(reqJson.word[0])
       }
       return new Response("200", {
           headers: {
