@@ -11,7 +11,7 @@ import {
     setDoc,
     getFirestore,
 } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore-lite.js";
-const firebaseConfig = JSON.stringify(Deno.env.get("FIREBASE_CONFIG"));
+const firebaseConfig = JSON.perse(Deno.env.get("FIREBASE_CONFIG"));
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
