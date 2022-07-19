@@ -14,6 +14,10 @@ const Private = () => {
     const inputCheck = (e) => {
         e.preventDefault()
         if(word.length === 0) return 
+        if(word.length > 20){
+            setResSentence("文字数が大きすぎます 20文字以内で入力してください")
+            return;
+        }
         const grep =  /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}]+$/mu;
         if(!grep.test(word)){
             setResSentence("ひらがなのみで入力してください")
