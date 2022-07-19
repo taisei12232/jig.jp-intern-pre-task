@@ -8038,10 +8038,12 @@ Error generating stack: ` + i6.message + `
     if (!data)
       return /* @__PURE__ */ Ye.createElement("div", null, "loading...");
     const handleWord = (e3) => {
-      if (data["words"].slice(-1)[0].slice(-1)[0] === "\u3093") {
-        setResSentence("\u6700\u5F8C\u306B\u300C\u3093\u300D\u304C\u3064\u304D\u307E\u3057\u305F\u3002Reset\u3092\u62BC\u3057\u3066\u6700\u521D\u304B\u3089\u3084\u308A\u76F4\u3057\u3066\u304F\u3060\u3055\u3044\u3002");
-        setWord("");
-        return;
+      if (data["words"].length !== 0) {
+        if (data["words"].slice(-1)[0].slice(-1)[0] === "\u3093") {
+          setResSentence("\u6700\u5F8C\u306B\u300C\u3093\u300D\u304C\u3064\u304D\u307E\u3057\u305F\u3002Reset\u3092\u62BC\u3057\u3066\u6700\u521D\u304B\u3089\u3084\u308A\u76F4\u3057\u3066\u304F\u3060\u3055\u3044\u3002");
+          setWord("");
+          return;
+        }
       }
       setWord(e3.target.value);
       setResSentence("");
@@ -8145,10 +8147,12 @@ Error generating stack: ` + i6.message + `
     const query2 = new URLSearchParams(search);
     const { data } = fetchSinceWords(query2.get("watchword"));
     const handleWord = (e3) => {
-      if (data["words"].slice(-1)[0].slice(-1)[0] === "\u3093") {
-        setResSentence("\u6700\u5F8C\u306B\u300C\u3093\u300D\u304C\u3064\u304D\u307E\u3057\u305F\u3002Reset\u3092\u62BC\u3057\u3066\u6700\u521D\u304B\u3089\u3084\u308A\u76F4\u3057\u3066\u304F\u3060\u3055\u3044\u3002");
-        setWord("");
-        return;
+      if (data["words"].length !== 0) {
+        if (data["words"].slice(-1)[0].slice(-1)[0] === "\u3093") {
+          setResSentence("\u6700\u5F8C\u306B\u300C\u3093\u300D\u304C\u3064\u304D\u307E\u3057\u305F\u3002Reset\u3092\u62BC\u3057\u3066\u6700\u521D\u304B\u3089\u3084\u308A\u76F4\u3057\u3066\u304F\u3060\u3055\u3044\u3002");
+          setWord("");
+          return;
+        }
       }
       setWord(e3.target.value);
       setResSentence("");

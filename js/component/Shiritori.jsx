@@ -8,10 +8,12 @@ const Shiritori = () => {
     const {data} = fetchSinceWords("world")
     if(!data) return(<div>loading...</div>);
     const handleWord = (e) => {
-        if(data["words"].slice(-1)[0].slice(-1)[0] === "ん"){
-            setResSentence("最後に「ん」がつきました。Resetを押して最初からやり直してください。")
-            setWord("")
-            return
+        if(data["words"].length !== 0){
+            if(data["words"].slice(-1)[0].slice(-1)[0] === "ん"){
+                setResSentence("最後に「ん」がつきました。Resetを押して最初からやり直してください。")
+                setWord("")
+                return
+            }
         }
         setWord(e.target.value);
         setResSentence("");
