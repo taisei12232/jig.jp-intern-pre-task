@@ -45,6 +45,10 @@ const Private = () => {
                 return
             }
         }
+        if(data["words"].some(a => a === word)){
+            setResSentence("既に使われている単語です")
+            return
+        }
         pushNextWord()
         setWord("")
     }

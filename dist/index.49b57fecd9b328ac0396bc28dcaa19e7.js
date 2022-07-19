@@ -8075,6 +8075,10 @@ Error generating stack: ` + i6.message + `
           return;
         }
       }
+      if (data["words"].some((a4) => a4 === word)) {
+        setResSentence("\u65E2\u306B\u4F7F\u308F\u308C\u3066\u3044\u308B\u5358\u8A9E\u3067\u3059");
+        return;
+      }
       pushNextWord();
       setWord("");
     };
@@ -8170,6 +8174,10 @@ Error generating stack: ` + i6.message + `
           setResSentence("\u3057\u308A\u3068\u308A\u304C\u6210\u7ACB\u3057\u3066\u3044\u307E\u305B\u3093");
           return;
         }
+      }
+      if (data["words"].some((a4) => a4 === word)) {
+        setResSentence("\u65E2\u306B\u4F7F\u308F\u308C\u3066\u3044\u308B\u5358\u8A9E\u3067\u3059");
+        return;
       }
       pushNextWord();
       setWord("");
