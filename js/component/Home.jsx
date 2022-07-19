@@ -14,7 +14,7 @@ const Home = () => {
             <Link className="btn-public" to="/public">
                 <button className="btn-public">世界中のみんなと</button>
             </Link>
-            <button className="btn-private" onClick={handlePrivate}>気の知れた友達と</button>
+            <button className="btn-private" onClick={handlePrivate}>気心の知れた友達と</button>
         </div>
         <isOpenContext.Provider value={{isOpen,setIsOpen}}>
             <ModalWord />

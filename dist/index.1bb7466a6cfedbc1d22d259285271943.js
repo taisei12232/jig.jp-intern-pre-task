@@ -7599,7 +7599,7 @@ Error generating stack: ` + i6.message + `
     }, "\u4E16\u754C\u4E2D\u306E\u307F\u3093\u306A\u3068")), /* @__PURE__ */ Ye.createElement("button", {
       className: "btn-private",
       onClick: handlePrivate
-    }, "\u6C17\u306E\u77E5\u308C\u305F\u53CB\u9054\u3068")), /* @__PURE__ */ Ye.createElement(isOpenContext.Provider, {
+    }, "\u6C17\u5FC3\u306E\u77E5\u308C\u305F\u53CB\u9054\u3068")), /* @__PURE__ */ Ye.createElement(isOpenContext.Provider, {
       value: { isOpen, setIsOpen }
     }, /* @__PURE__ */ Ye.createElement(ModalWatchword_default, null)), /* @__PURE__ */ Ye.createElement("div", null));
   };
