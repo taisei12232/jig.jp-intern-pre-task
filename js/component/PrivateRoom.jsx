@@ -18,13 +18,29 @@ const Private = () => {
             setResSentence("文字数が大きすぎます 20文字以内で入力してください")
             return;
         }
-        const grep =  /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}]+$/mu;
+        const grep =  /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}\u{30FC}]+$/mu;
         if(!grep.test(word)){
             setResSentence("ひらがなのみで入力してください")
             return;
         }
+        for(var i = 0;i < word.length-1;i++){
+            if(word[i] === "ー" && word[i+1] === "ー"){
+                setResSentence("伸ばし棒は連続して使用できません")
+                return;
+            }
+        }
         if(data["words"].length !== 0){
-            if(data["words"].slice(-1)[0].slice(-1)[0] !== word.slice(0,1)){
+            if(word[0] === "ー"){
+                setResSentence("最初の文字に伸ばし棒は使用できません")
+                return
+            }
+            if(data["words"].slice(-1)[0].slice(-1)[0] === "ー"){
+                if(data["words"].slice(-1)[0].slice(-2)[0] !== word[0]){
+                    setResSentence("しりとりが成立していません")
+                    return
+                }
+            }
+            else if(data["words"].slice(-1)[0].slice(-1)[0] !== word[0]){
                 setResSentence("しりとりが成立していません")
                 return
             }

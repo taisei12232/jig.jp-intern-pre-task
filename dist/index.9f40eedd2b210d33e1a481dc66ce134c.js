@@ -8049,13 +8049,28 @@ Error generating stack: ` + i6.message + `
         setResSentence("\u6587\u5B57\u6570\u304C\u5927\u304D\u3059\u304E\u307E\u3059 20\u6587\u5B57\u4EE5\u5185\u3067\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044");
         return;
       }
-      const grep = /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}]+$/mu;
+      const grep = /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}\u{30FC}]+$/mu;
       if (!grep.test(word)) {
         setResSentence("\u3072\u3089\u304C\u306A\u306E\u307F\u3067\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044");
         return;
       }
+      for (var i6 = 0; i6 < word.length - 1; i6++) {
+        if (word[i6] === "\u30FC" && word[i6 + 1] === "\u30FC") {
+          setResSentence("\u4F38\u3070\u3057\u68D2\u306F\u9023\u7D9A\u3057\u3066\u4F7F\u7528\u3067\u304D\u307E\u305B\u3093");
+          return;
+        }
+      }
       if (data["words"].length !== 0) {
-        if (data["words"].slice(-1)[0].slice(-1)[0] !== word.slice(0, 1)) {
+        if (word[0] === "\u30FC") {
+          setResSentence("\u6700\u521D\u306E\u6587\u5B57\u306B\u4F38\u3070\u3057\u68D2\u306F\u4F7F\u7528\u3067\u304D\u307E\u305B\u3093");
+          return;
+        }
+        if (data["words"].slice(-1)[0].slice(-1)[0] === "\u30FC") {
+          if (data["words"].slice(-1)[0].slice(-2)[0] !== word[0]) {
+            setResSentence("\u3057\u308A\u3068\u308A\u304C\u6210\u7ACB\u3057\u3066\u3044\u307E\u305B\u3093");
+            return;
+          }
+        } else if (data["words"].slice(-1)[0].slice(-1)[0] !== word[0]) {
           setResSentence("\u3057\u308A\u3068\u308A\u304C\u6210\u7ACB\u3057\u3066\u3044\u307E\u305B\u3093");
           return;
         }
@@ -8130,13 +8145,28 @@ Error generating stack: ` + i6.message + `
         setResSentence("\u6587\u5B57\u6570\u304C\u5927\u304D\u3059\u304E\u307E\u3059 20\u6587\u5B57\u4EE5\u5185\u3067\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044");
         return;
       }
-      const grep = /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}]+$/mu;
+      const grep = /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}\u{30FC}]+$/mu;
       if (!grep.test(word)) {
         setResSentence("\u3072\u3089\u304C\u306A\u306E\u307F\u3067\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044");
         return;
       }
+      for (var i6 = 0; i6 < word.length - 1; i6++) {
+        if (word[i6] === "\u30FC" && word[i6 + 1] === "\u30FC") {
+          setResSentence("\u4F38\u3070\u3057\u68D2\u306F\u9023\u7D9A\u3057\u3066\u4F7F\u7528\u3067\u304D\u307E\u305B\u3093");
+          return;
+        }
+      }
       if (data["words"].length !== 0) {
-        if (data["words"].slice(-1)[0].slice(-1)[0] !== word.slice(0, 1)) {
+        if (word[0] === "\u30FC") {
+          setResSentence("\u6700\u521D\u306E\u6587\u5B57\u306B\u4F38\u3070\u3057\u68D2\u306F\u4F7F\u7528\u3067\u304D\u307E\u305B\u3093");
+          return;
+        }
+        if (data["words"].slice(-1)[0].slice(-1)[0] === "\u30FC") {
+          if (data["words"].slice(-1)[0].slice(-2)[0] !== word[0]) {
+            setResSentence("\u3057\u308A\u3068\u308A\u304C\u6210\u7ACB\u3057\u3066\u3044\u307E\u305B\u3093");
+            return;
+          }
+        } else if (data["words"].slice(-1)[0].slice(-1)[0] !== word[0]) {
           setResSentence("\u3057\u308A\u3068\u308A\u304C\u6210\u7ACB\u3057\u3066\u3044\u307E\u305B\u3093");
           return;
         }
