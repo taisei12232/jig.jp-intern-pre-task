@@ -29,11 +29,11 @@ const Private = () => {
                 return;
             }
         }
+        if(word[0] === "ー"){
+            setResSentence("最初の文字に伸ばし棒は使用できません")
+            return
+        }
         if(data["words"].length !== 0){
-            if(word[0] === "ー"){
-                setResSentence("最初の文字に伸ばし棒は使用できません")
-                return
-            }
             if(data["words"].slice(-1)[0].slice(-1)[0] === "ー"){
                 if(data["words"].slice(-1)[0].slice(-2)[0] !== word[0]){
                     setResSentence("しりとりが成立していません")

@@ -8060,11 +8060,11 @@ Error generating stack: ` + i6.message + `
           return;
         }
       }
+      if (word[0] === "\u30FC") {
+        setResSentence("\u6700\u521D\u306E\u6587\u5B57\u306B\u4F38\u3070\u3057\u68D2\u306F\u4F7F\u7528\u3067\u304D\u307E\u305B\u3093");
+        return;
+      }
       if (data["words"].length !== 0) {
-        if (word[0] === "\u30FC") {
-          setResSentence("\u6700\u521D\u306E\u6587\u5B57\u306B\u4F38\u3070\u3057\u68D2\u306F\u4F7F\u7528\u3067\u304D\u307E\u305B\u3093");
-          return;
-        }
         if (data["words"].slice(-1)[0].slice(-1)[0] === "\u30FC") {
           if (data["words"].slice(-1)[0].slice(-2)[0] !== word[0]) {
             setResSentence("\u3057\u308A\u3068\u308A\u304C\u6210\u7ACB\u3057\u3066\u3044\u307E\u305B\u3093");
@@ -8156,11 +8156,11 @@ Error generating stack: ` + i6.message + `
           return;
         }
       }
+      if (word[0] === "\u30FC") {
+        setResSentence("\u6700\u521D\u306E\u6587\u5B57\u306B\u4F38\u3070\u3057\u68D2\u306F\u4F7F\u7528\u3067\u304D\u307E\u305B\u3093");
+        return;
+      }
       if (data["words"].length !== 0) {
-        if (word[0] === "\u30FC") {
-          setResSentence("\u6700\u521D\u306E\u6587\u5B57\u306B\u4F38\u3070\u3057\u68D2\u306F\u4F7F\u7528\u3067\u304D\u307E\u305B\u3093");
-          return;
-        }
         if (data["words"].slice(-1)[0].slice(-1)[0] === "\u30FC") {
           if (data["words"].slice(-1)[0].slice(-2)[0] !== word[0]) {
             setResSentence("\u3057\u308A\u3068\u308A\u304C\u6210\u7ACB\u3057\u3066\u3044\u307E\u305B\u3093");
