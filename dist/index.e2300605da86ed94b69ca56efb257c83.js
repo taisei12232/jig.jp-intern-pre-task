@@ -8045,6 +8045,10 @@ Error generating stack: ` + i6.message + `
       e3.preventDefault();
       if (word.length === 0)
         return;
+      if (word.length > 20) {
+        setResSentence("\u6587\u5B57\u6570\u304C\u5927\u304D\u3059\u304E\u307E\u3059 20\u6587\u5B57\u4EE5\u5185\u3067\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044");
+        return;
+      }
       const grep = /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}]+$/mu;
       if (!grep.test(word)) {
         setResSentence("\u3072\u3089\u304C\u306A\u306E\u307F\u3067\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044");
@@ -8122,6 +8126,10 @@ Error generating stack: ` + i6.message + `
       e3.preventDefault();
       if (word.length === 0)
         return;
+      if (word.length > 20) {
+        setResSentence("\u6587\u5B57\u6570\u304C\u5927\u304D\u3059\u304E\u307E\u3059 20\u6587\u5B57\u4EE5\u5185\u3067\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044");
+        return;
+      }
       const grep = /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}]+$/mu;
       if (!grep.test(word)) {
         setResSentence("\u3072\u3089\u304C\u306A\u306E\u307F\u3067\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044");
