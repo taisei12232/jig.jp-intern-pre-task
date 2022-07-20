@@ -1,4 +1,4 @@
-import React, { useState } from "https://esm.sh/react@18.2.0";
+import React, { useState,useEffect } from "https://esm.sh/react@18.2.0";
 import { Link,useLocation } from "https://esm.sh/react-router-dom@5.2.0";
 import { fetchSinceWords } from "./getSinceWords.jsx";
 const Private = () => {
@@ -10,6 +10,9 @@ const Private = () => {
     const big = ["あ","い","う","え","お","や","ゆ","よ","わ"]
     const query2 = new URLSearchParams(search);
     const {data} = fetchSinceWords(query2.get("watchword"))
+    useEffect(() => {
+        setIsLoading(false)
+    },[data])
     const handleWord = (e) => {
         if(data["words"].length !== 0){
             if(data["words"].slice(-1)[0].slice(-1)[0] === "ん"){
@@ -80,7 +83,6 @@ const Private = () => {
         }
         setIsLoading(true)
         pushNextWord()
-        setIsLoading(false)
         setWord("")
     }
     const pushNextWord = async () => {
@@ -117,7 +119,7 @@ const Private = () => {
                         : <div className="arrow">→</div>}
                 </div>
             ))}
-            {isLoading &&<div className="shiritori-word">
+            {isLoading && <div className="shiritori-word">
                 <div className="shiritoriword" key={"loading"}>loading...</div>
             </div>}
         </div>

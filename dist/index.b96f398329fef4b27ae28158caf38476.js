@@ -8040,6 +8040,9 @@ Error generating stack: ` + i6.message + `
     const big = ["\u3042", "\u3044", "\u3046", "\u3048", "\u304A", "\u3084", "\u3086", "\u3088", "\u308F"];
     if (!data)
       return /* @__PURE__ */ Ye.createElement("div", null, "loading...");
+    Ve(() => {
+      setIsLoading(false);
+    }, [data]);
     const handleWord = (e3) => {
       if (data["words"].length !== 0) {
         if (data["words"].slice(-1)[0].slice(-1)[0] === "\u3093") {
@@ -8108,7 +8111,6 @@ Error generating stack: ` + i6.message + `
       setIsLoading(true);
       pushNextWord();
       setWord("");
-      setIsLoading(false);
     };
     const handleReset = async () => {
       await fetch("/delete/world", {
@@ -8174,6 +8176,9 @@ Error generating stack: ` + i6.message + `
     const big = ["\u3042", "\u3044", "\u3046", "\u3048", "\u304A", "\u3084", "\u3086", "\u3088", "\u308F"];
     const query2 = new URLSearchParams(search);
     const { data } = fetchSinceWords(query2.get("watchword"));
+    Ve(() => {
+      setIsLoading(false);
+    }, [data]);
     const handleWord = (e3) => {
       if (data["words"].length !== 0) {
         if (data["words"].slice(-1)[0].slice(-1)[0] === "\u3093") {
@@ -8241,7 +8246,6 @@ Error generating stack: ` + i6.message + `
       }
       setIsLoading(true);
       pushNextWord();
-      setIsLoading(false);
       setWord("");
     };
     const pushNextWord = async () => {

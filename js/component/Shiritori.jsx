@@ -1,4 +1,4 @@
-import React, { useState } from "https://esm.sh/react@18.2.0";
+import React, { useState,useEffect } from "https://esm.sh/react@18.2.0";
 import { Link } from "https://esm.sh/react-router-dom@5.2.0";
 import { fetchSinceWords } from "./getSinceWords.jsx";
 
@@ -10,6 +10,9 @@ const Shiritori = () => {
     const kogaki = ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","ゎ"]
     const big = ["あ","い","う","え","お","や","ゆ","よ","わ"]
     if(!data) return(<div>loading...</div>);
+    useEffect(() => {
+        setIsLoading(false)
+    },[data])
     const handleWord = (e) => {
         if(data["words"].length !== 0){
             if(data["words"].slice(-1)[0].slice(-1)[0] === "ん"){
@@ -81,7 +84,6 @@ const Shiritori = () => {
         setIsLoading(true)
         pushNextWord()
         setWord("")
-        setIsLoading(false)
     }
     const handleReset = async () => {
         await fetch("/delete/world", {
