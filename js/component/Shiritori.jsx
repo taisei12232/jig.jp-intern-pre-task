@@ -44,6 +44,8 @@ const Shiritori = () => {
         }
         if(data["words"].length !== 0){
             const kogakiIndex = kogaki.findIndex(element => element === data["words"].slice(-1)[0].slice(-1)[0])
+            console.log(kogakiIndex)
+            console.log(big[kogakiIndex])
             if(kogakiIndex != -1){
                 if(big[kogakiIndex] !== word[0] && data["words"].slice(-1)[0].slice(-1)[0] !== word[0])
                 setResSentence("しりとりが成立していません")
