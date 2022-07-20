@@ -18,14 +18,16 @@ const db = getFirestore(app);
 //console.log("Listening on http://localhost:8080");
 
 serve(async (req) => {
-
+  
   const pathname = new URL(req.url).pathname;
   //console.log(req)
   if (req.method === "GET" && dirname(pathname) === "/watchword") {
     const docRef = doc(db, "shiritori", decodeURI(basename(pathname)));
     const response = await getDoc(docRef)
     if(!response.exists()){
-      setDoc(docRef,{words:[]})
+      const FirstRef = doc(db, "firstWords", "words");
+      const first = await getDoc(FirstRef).data()
+      setDoc(docRef,{words:[first["words"][Math.floor(Math.random() * first["words"].length)]]})
     }
     //console.log(response.data())
     return new Response(JSON.stringify(response.data()), {
@@ -64,7 +66,9 @@ serve(async (req) => {
   }
   else if(dirname(pathname) === "/delete" && req.method === "DELETE") {
     const docRef = doc(db, "shiritori", decodeURI(basename(pathname)));
-    updateDoc(docRef,{words:[]})
+    const FirstRef = doc(db, "firstWords", "words");
+    const first = await getDoc(FirstRef).data()
+    setDoc(docRef,{words:[first["words"][Math.floor(Math.random() * first["words"].length)]]})
     return new Response(200)
   }
   return serveDir(req, {
