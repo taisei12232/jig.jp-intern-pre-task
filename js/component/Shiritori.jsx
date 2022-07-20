@@ -53,24 +53,24 @@ const Shiritori = () => {
             console.log(word[0])
             if(kogakiIndex != -1){
                 if(big[kogakiIndex] !== word[0] && data["words"].slice(-1)[0].slice(-1)[0] !== word[0]){
-                    setResSentence("しりとりが成立していません")
+                    setResSentence("しりとりが成立していません1")
                     return
                 }
             }
             else if(data["words"].slice(-1)[0].slice(-1)[0] === "ー"){
                 if(kogakiIndex != -1){
                     if(big[kogakiIndex2] !== word[0]){
-                        setResSentence("しりとりが成立していません")
+                        setResSentence("しりとりが成立していません2")
                         return
                     }
                 }
                 else if(data["words"].slice(-1)[0].slice(-2)[0] !== word[0]){
-                    setResSentence("しりとりが成立していません")
+                    setResSentence("しりとりが成立していません3")
                     return
                 }
             }
             else if(data["words"].slice(-1)[0].slice(-1)[0] !== word[0]){
-                setResSentence("しりとりが成立していません")
+                setResSentence("しりとりが成立していません4")
                 return
             }
         }
