@@ -47,24 +47,24 @@ const Private = () => {
             const kogakiIndex2 = kogaki.findIndex(element => element === data["words"].slice(-1)[0].slice(-2)[0])
             if(kogakiIndex != -1){
                 if(big[kogakiIndex] !== word[0] && data["words"].slice(-1)[0].slice(-1)[0] !== word[0]){
-                    setResSentence("しりとりが成立していません1")
+                    setResSentence("しりとりが成立していません")
                     return
                 }
             }
             else if(data["words"].slice(-1)[0].slice(-1)[0] === "ー"){
                 if(kogakiIndex != -1){
                     if(big[kogakiIndex2] !== word[0]){
-                        setResSentence("しりとりが成立していません2")
+                        setResSentence("しりとりが成立していません")
                         return
                     }
                 }
                 else if(data["words"].slice(-1)[0].slice(-2)[0] !== word[0] && kogakiIndex2 == -1){
-                    setResSentence("しりとりが成立していません3")
+                    setResSentence("しりとりが成立していません")
                     return
                 }
             }
             else if(data["words"].slice(-1)[0].slice(-1)[0] !== word[0]){
-                setResSentence("しりとりが成立していません4")
+                setResSentence("しりとりが成立していません")
                 return
             }
         }
