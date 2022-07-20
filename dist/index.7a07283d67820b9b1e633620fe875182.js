@@ -7568,6 +7568,7 @@ Error generating stack: ` + i6.message + `
       type: "text",
       className: "inputwatchword",
       value: watchword,
+      autoComplete: "off",
       onChange: handleWatchword
     }), isCorrectInput && /* @__PURE__ */ Ye.createElement(F4, {
       to: `/private?watchword=${watchword}`,
