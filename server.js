@@ -21,7 +21,7 @@ serve(async (req) => {
   
   const pathname = new URL(req.url).pathname;
   //console.log(req)
-  console.log(pathname)
+  console.log(dirname(pathname))
   if (req.method === "GET" && dirname(pathname) === "/watchword") {
     const docRef = doc(db, "shiritori", decodeURI(basename(pathname)));
     const response = await getDoc(docRef)
