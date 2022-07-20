@@ -26,8 +26,9 @@ serve(async (req) => {
     const response = await getDoc(docRef)
     if(!response.exists()){
       const FirstRef = doc(db, "firstWords", "words");
-      const first = await getDoc(FirstRef).data()
-      await setDoc(docRef,{words:[first["words"][Math.floor(Math.random() * first["words"].length)]]})
+      const firstRes = await getDoc(FirstRef)
+      const firestWords = firstRes.data()
+      await setDoc(docRef,{words:[firestWords["words"][Math.floor(Math.random() * firestWords["words"].length)]]})
     }
     //console.log(response.data())
     return new Response(JSON.stringify(response.data()), {
@@ -67,8 +68,9 @@ serve(async (req) => {
   else if(dirname(pathname) === "/delete" && req.method === "DELETE") {
     const docRef = doc(db, "shiritori", decodeURI(basename(pathname)));
     const FirstRef = doc(db, "firstWords", "words");
-    const first = await getDoc(FirstRef).data()
-    await setDoc(docRef,{words:[first["words"][Math.floor(Math.random() * first["words"].length)]]})
+    const firstRes = await getDoc(FirstRef)
+    const firestWords = firstRes.data()
+    await setDoc(docRef,{words:[firestWords["words"][Math.floor(Math.random() * firestWords["words"].length)]]})
     return new Response(200)
   }
   return serveDir(req, {
