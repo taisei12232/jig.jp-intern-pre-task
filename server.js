@@ -21,6 +21,7 @@ serve(async (req) => {
   
   const pathname = new URL(req.url).pathname;
   //console.log(req)
+  console.log(pathname)
   if (req.method === "GET" && dirname(pathname) === "/watchword") {
     const docRef = doc(db, "shiritori", decodeURI(basename(pathname)));
     const response = await getDoc(docRef)
@@ -73,7 +74,8 @@ serve(async (req) => {
     await setDoc(docRef,{words:[firestWords["words"][Math.floor(Math.random() * firestWords["words"].length)]]})
     return new Response(200)
   }
-  else if(dirname(pathname) === "/public" || dirname(pathname) === "private"){
+  else if(dirname(pathname) === "/public" || dirname(pathname) === "/private"){
+    console.log(pathname)
     return new Response(await Deno.readTextFile("./dist/index.html"), {
       headers: { "Content-Type": "text/html; charset=utf-8" },
     });
