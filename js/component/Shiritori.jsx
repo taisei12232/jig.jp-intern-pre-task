@@ -90,6 +90,7 @@ const Shiritori = () => {
             mode: 'same-origin',
             method: "DELETE"
         });
+        setResSentence("")
     }
     const pushNextWord = async () => {
         const response = await fetch("/nextword", {

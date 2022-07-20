@@ -8117,6 +8117,7 @@ Error generating stack: ` + i6.message + `
         mode: "same-origin",
         method: "DELETE"
       });
+      setResSentence("");
     };
     const pushNextWord = async () => {
       const response = await fetch("/nextword", {
@@ -8261,6 +8262,7 @@ Error generating stack: ` + i6.message + `
         mode: "same-origin",
         method: "DELETE"
       });
+      setResSentence("");
     };
     if (!data)
       return /* @__PURE__ */ Ye.createElement("div", null, "loading...");

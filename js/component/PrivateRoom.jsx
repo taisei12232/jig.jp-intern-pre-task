@@ -100,6 +100,7 @@ const Private = () => {
             mode: 'same-origin',
             method: "DELETE"
         });
+        setResSentence("")
     }
     //console.log(data)
     if(!data) return(<div>loading...</div>);
