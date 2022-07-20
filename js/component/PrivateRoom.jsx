@@ -5,6 +5,8 @@ const Private = () => {
     const [word,setWord] = useState("")
     const [resSentence,setResSentence] = useState("")
     const {search} = useLocation(); //なぜか動く
+    const kogaki = ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","ゎ"]
+    const big = ["あ","い","う","え","お","や","ゆ","よ","わ"]
     const query2 = new URLSearchParams(search);
     const {data} = fetchSinceWords(query2.get("watchword"))
     const handleWord = (e) => {
@@ -41,14 +43,28 @@ const Private = () => {
             return
         }
         if(data["words"].length !== 0){
-            if(data["words"].slice(-1)[0].slice(-1)[0] === "ー"){
-                if(data["words"].slice(-1)[0].slice(-2)[0] !== word[0]){
-                    setResSentence("しりとりが成立していません")
+            const kogakiIndex = kogaki.findIndex(element => element === data["words"].slice(-1)[0].slice(-1)[0])
+            const kogakiIndex2 = kogaki.findIndex(element => element === data["words"].slice(-1)[0].slice(-2)[0])
+            if(kogakiIndex != -1){
+                if(big[kogakiIndex] !== word[0] && data["words"].slice(-1)[0].slice(-1)[0] !== word[0]){
+                    setResSentence("しりとりが成立していません1")
+                    return
+                }
+            }
+            else if(data["words"].slice(-1)[0].slice(-1)[0] === "ー"){
+                if(kogakiIndex != -1){
+                    if(big[kogakiIndex2] !== word[0]){
+                        setResSentence("しりとりが成立していません2")
+                        return
+                    }
+                }
+                else if(data["words"].slice(-1)[0].slice(-2)[0] !== word[0] && kogakiIndex2 == -1){
+                    setResSentence("しりとりが成立していません3")
                     return
                 }
             }
             else if(data["words"].slice(-1)[0].slice(-1)[0] !== word[0]){
-                setResSentence("しりとりが成立していません")
+                setResSentence("しりとりが成立していません4")
                 return
             }
         }
