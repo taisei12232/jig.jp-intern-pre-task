@@ -8074,14 +8074,8 @@ Error generating stack: ` + i6.message + `
         return;
       }
       if (data["words"].length !== 0) {
-        console.log(big[0]);
         const kogakiIndex = kogaki.findIndex((element) => element === data["words"].slice(-1)[0].slice(-1)[0]);
         const kogakiIndex2 = kogaki.findIndex((element) => element === data["words"].slice(-1)[0].slice(-2)[0]);
-        console.log(kogakiIndex);
-        console.log(big[kogakiIndex]);
-        console.log(kogakiIndex2);
-        console.log(big[kogakiIndex2]);
-        console.log(word[0]);
         if (kogakiIndex != -1) {
           if (big[kogakiIndex] !== word[0] && data["words"].slice(-1)[0].slice(-1)[0] !== word[0]) {
             setResSentence("\u3057\u308A\u3068\u308A\u304C\u6210\u7ACB\u3057\u3066\u3044\u307E\u305B\u30931");
