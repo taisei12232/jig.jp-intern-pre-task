@@ -7,8 +7,8 @@ const Shiritori = () => {
     const [resSentence,setResSentence] = useState("")
     const [isLoading,setIsLoading] = useState(false)
     const {data} = fetchSinceWords("world")
-    const kogaki = ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","ゎ"]
-    const big = ["あ","い","う","え","お","や","ゆ","よ","わ"]
+    const kogaki = ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","ゎ","ゐ","ゑ"]
+    const big = ["あ","い","う","え","お","や","ゆ","よ","わ","い","え"]
     useEffect(() => {
         setIsLoading(false)
     },[data])
@@ -36,7 +36,7 @@ const Shiritori = () => {
             setResSentence("文字数が大きすぎます 20文字以内で入力してください")
             return;
         }
-        const grep =  /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}\u{30FC}]+$/mu;
+        const grep =  /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}\u{30FC}\u{3094}]+$/mu;
         if(!grep.test(word)){
             setResSentence("ひらがなのみで入力してください")
             return;

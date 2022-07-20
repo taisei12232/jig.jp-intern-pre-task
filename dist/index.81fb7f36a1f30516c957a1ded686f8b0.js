@@ -8037,8 +8037,8 @@ Error generating stack: ` + i6.message + `
     const [resSentence, setResSentence] = ze("");
     const [isLoading, setIsLoading] = ze(false);
     const { data } = fetchSinceWords("world");
-    const kogaki = ["\u3041", "\u3043", "\u3045", "\u3047", "\u3049", "\u3083", "\u3085", "\u3087", "\u308E"];
-    const big = ["\u3042", "\u3044", "\u3046", "\u3048", "\u304A", "\u3084", "\u3086", "\u3088", "\u308F"];
+    const kogaki = ["\u3041", "\u3043", "\u3045", "\u3047", "\u3049", "\u3083", "\u3085", "\u3087", "\u308E", "\u3090", "\u3091"];
+    const big = ["\u3042", "\u3044", "\u3046", "\u3048", "\u304A", "\u3084", "\u3086", "\u3088", "\u308F", "\u3044", "\u3048"];
     Ve(() => {
       setIsLoading(false);
     }, [data]);
@@ -8067,7 +8067,7 @@ Error generating stack: ` + i6.message + `
         setResSentence("\u6587\u5B57\u6570\u304C\u5927\u304D\u3059\u304E\u307E\u3059 20\u6587\u5B57\u4EE5\u5185\u3067\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044");
         return;
       }
-      const grep = /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}\u{30FC}]+$/mu;
+      const grep = /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}\u{30FC}\u{3094}]+$/mu;
       if (!grep.test(word)) {
         setResSentence("\u3072\u3089\u304C\u306A\u306E\u307F\u3067\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044");
         return;
