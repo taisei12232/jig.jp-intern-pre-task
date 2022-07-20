@@ -18,7 +18,8 @@ const db = getFirestore(app);
 //console.log("Listening on http://localhost:8080");
 
 serve(async (req) => {
-  
+  const kogaki = ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","ゎ"]
+  const big = ["あ","い","う","え","お","や","ゆ","よ","わ"]
   const pathname = new URL(req.url).pathname;
   //console.log(req.url)
   if (req.method === "GET" && dirname(pathname) === "/watchword") {
@@ -43,6 +44,8 @@ serve(async (req) => {
       const docRef = doc(db, "shiritori", reqJson.id);
       const response = await getDoc(docRef)
       const data = response.data()
+      const kogakiIndex = kogaki.findIndex(element => element === data.words.slice(-1)[0].slice(-1)[0])
+      const kogakiIndex2 = kogaki.findIndex(element => element === data.words.slice(-1)[0].slice(-2)[0])
       if(data.words.length === 0){
         data.words.push(reqJson.word)
         //console.log(data)
@@ -52,6 +55,18 @@ serve(async (req) => {
         data.words.push(reqJson.word)
         //console.log(data)
         await updateDoc(docRef,{words:data.words})
+      }
+      else if(kogakiIndex != -1 || kogakiIndex2 != -1){
+        if(data.words.slice(-1)[0].slice(-1)[0] === "ー"){
+          if(big[kogakiIndex2] === reqJson.word[0]){
+            data.words.push(reqJson.word)
+            await updateDoc(docRef,{words:data.words})
+          }
+        }
+        else if(big[kogakiIndex] === reqJson.word[0]){
+          data.words.push(reqJson.word)
+          await updateDoc(docRef,{words:data.words})
+        }
       }
       else if(data.words.slice(-1)[0].slice(-1)[0] === "ー" && data.words.slice(-1)[0].slice(-2)[0] === reqJson.word[0]){
         data.words.push(reqJson.word)
