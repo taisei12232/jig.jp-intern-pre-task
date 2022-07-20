@@ -8167,6 +8167,10 @@ Error generating stack: ` + i6.message + `
           setResSentence("\u6700\u5F8C\u306B\u300C\u3093\u300D\u304C\u3064\u304D\u307E\u3057\u305F\u3002Reset\u3092\u62BC\u3057\u3066\u6700\u521D\u304B\u3089\u3084\u308A\u76F4\u3057\u3066\u304F\u3060\u3055\u3044\u3002");
           setWord("");
           return;
+        } else if (data["words"].slice(-1)[0].slice(-1)[0] === "\u30FC" && ata["words"].slice(-1)[0].slice(-2)[0] === "\u3093") {
+          setResSentence("\u6700\u5F8C\u306B\u300C\u3093\u300D\u304C\u3064\u304D\u307E\u3057\u305F\u3002Reset\u3092\u62BC\u3057\u3066\u6700\u521D\u304B\u3089\u3084\u308A\u76F4\u3057\u3066\u304F\u3060\u3055\u3044\u3002");
+          setWord("");
+          return;
         }
       }
       setWord(e3.target.value);
@@ -8267,7 +8271,7 @@ Error generating stack: ` + i6.message + `
     }, /* @__PURE__ */ Ye.createElement("div", {
       className: "shiritoriword",
       key: word2
-    }, word2), word2.slice(-1)[0] === "\u3093" ? /* @__PURE__ */ Ye.createElement("div", {
+    }, word2), word2.slice(-1)[0] === "\u3093" || (word2.slice(-1)[0] === "\u30FC" || word2.slice(-2)[0] === "\u3093") ? /* @__PURE__ */ Ye.createElement("div", {
       className: "arrow"
     }, "\u274C") : /* @__PURE__ */ Ye.createElement("div", {
       className: "arrow"
