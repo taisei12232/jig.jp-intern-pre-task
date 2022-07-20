@@ -115,6 +115,8 @@ const Private = () => {
             {data["words"].map(word => (
                 <div className="shiritori-word">
                     <div className="shiritoriword" key={word}>{word}</div>
+                    {console.log(word.slice(-1)[0])}
+                    {console.log(word.slice(-2)[0])}
                     {word.slice(-1)[0] === "ん" || (word.slice(-1)[0] === "ー" || word.slice(-2)[0] === "ん") ? <div className="arrow">❌</div>
                         : <div className="arrow">→</div>}
                 </div>

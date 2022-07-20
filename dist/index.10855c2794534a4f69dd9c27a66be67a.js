@@ -8290,7 +8290,7 @@ Error generating stack: ` + i6.message + `
     }, /* @__PURE__ */ Ye.createElement("div", {
       className: "shiritoriword",
       key: word2
-    }, word2), word2.slice(-1)[0] === "\u3093" || (word2.slice(-1)[0] === "\u30FC" || word2.slice(-2)[0] === "\u3093") ? /* @__PURE__ */ Ye.createElement("div", {
+    }, word2), console.log(word2.slice(-1)[0]), console.log(word2.slice(-2)[0]), word2.slice(-1)[0] === "\u3093" || (word2.slice(-1)[0] === "\u30FC" || word2.slice(-2)[0] === "\u3093") ? /* @__PURE__ */ Ye.createElement("div", {
       className: "arrow"
     }, "\u274C") : /* @__PURE__ */ Ye.createElement("div", {
       className: "arrow"
