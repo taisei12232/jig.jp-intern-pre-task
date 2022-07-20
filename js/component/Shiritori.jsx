@@ -105,7 +105,7 @@ const Shiritori = () => {
     return (<div>
         <Link to="/" className="back" ><img src="https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_modoru_16.png" /></Link>
         <form onSubmit={inputCheck} >
-            <input className="wordInput" id="nextWordInput" type="text" value={word} onChange={handleWord}/>
+            <input className="wordInput" id="nextWordInput" type="text" autoComplete="off" value={word} onChange={handleWord}/>
         </form>
         <p className="alert">{resSentence}</p>
         <div className="words">

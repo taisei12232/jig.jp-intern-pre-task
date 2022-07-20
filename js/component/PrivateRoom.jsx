@@ -109,7 +109,7 @@ const Private = () => {
         <p className="watchword">合言葉:{query2.get("watchword")}</p>
         <p id="previousWord"></p>
         <form onSubmit={inputCheck} >
-            <input className="wordInput" id="nextWordInput" type="text" value={word} onChange={handleWord}/>
+            <input className="wordInput" id="nextWordInput" type="text" value={word} autoComplete="off" onChange={handleWord}/>
         </form>
         <p className="alert">{resSentence}</p>
         <div className="words">

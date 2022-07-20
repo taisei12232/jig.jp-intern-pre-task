@@ -8138,6 +8138,7 @@ Error generating stack: ` + i6.message + `
       className: "wordInput",
       id: "nextWordInput",
       type: "text",
+      autoComplete: "off",
       value: word,
       onChange: handleWord
     })), /* @__PURE__ */ Ye.createElement("p", {
@@ -8282,6 +8283,7 @@ Error generating stack: ` + i6.message + `
       id: "nextWordInput",
       type: "text",
       value: word,
+      autoComplete: "off",
       onChange: handleWord
     })), /* @__PURE__ */ Ye.createElement("p", {
       className: "alert"
