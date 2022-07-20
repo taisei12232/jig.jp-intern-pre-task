@@ -8091,16 +8091,15 @@ Error generating stack: ` + i6.message + `
     };
     const handleReset = async () => {
       await fetch("/delete/world", {
-        mode: "cors",
-        method: "DELETE",
-        headers: { "Access-Control-Allow-Origin": "*" }
+        mode: "nno-cors",
+        method: "DELETE"
       });
     };
     const pushNextWord = async () => {
       const response = await fetch("/nextword", {
-        mode: "cors",
+        mode: "no-cors",
         method: "POST",
-        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ word, id: "world" })
       });
     };
@@ -8200,7 +8199,7 @@ Error generating stack: ` + i6.message + `
     };
     const pushNextWord = async () => {
       const response = await fetch("/nextword", {
-        mode: "cors",
+        mode: "no-cors",
         method: "POST",
         headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
         body: JSON.stringify({ word, id: query2.get("watchword") })
@@ -8208,7 +8207,7 @@ Error generating stack: ` + i6.message + `
     };
     const handleReset = async () => {
       await fetch(`/delete/${query2.get("watchword")}`, {
-        mode: "cors",
+        mode: "no-cors",
         method: "DELETE",
         headers: { "Access-Control-Allow-Origin": "*" }
       });
