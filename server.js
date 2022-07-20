@@ -62,17 +62,17 @@ serve(async (req) => {
             data.words.push(reqJson.word)
             await updateDoc(docRef,{words:data.words})
           }
-          else if(data.words.slice(-1)[0].slice(-2)[0] === reqJson.word[0]){
-            data.words.push(reqJson.word)
-            await updateDoc(docRef,{words:data.words})
-          }
         }
         else if(big[kogakiIndex] === reqJson.word[0]){
           data.words.push(reqJson.word)
           await updateDoc(docRef,{words:data.words})
         }
       }
-      console.log("Why?")
+      else if(data.words.slice(-1)[0].slice(-1)[0] === "ー" && data.words.slice(-1)[0].slice(-2)[0] === reqJson.word[0]){
+        data.words.push(reqJson.word)
+        await updateDoc(docRef,{words:data.words})
+      }
+      //console.log("Why?")
       return new Response("200", {
           headers: {
               "content-type": "application/json"
