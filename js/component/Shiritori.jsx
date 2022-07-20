@@ -61,16 +61,15 @@ const Shiritori = () => {
     }
     const handleReset = async () => {
         await fetch("/delete/world", {
-            mode: 'cors',
-            method: "DELETE",
-            headers: {"Access-Control-Allow-Origin": "*" }
+            mode: 'nno-cors',
+            method: "DELETE"
         });
     }
     const pushNextWord = async () => {
         const response = await fetch("/nextword", {
-            mode: 'cors',
+            mode: 'no-cors',
             method: "POST",
-            headers: { "Content-Type": "application/json","Access-Control-Allow-Origin": "*" },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ word,id:"world" })
         });
         //console.log(response.ok)

@@ -33,8 +33,7 @@ serve(async (req) => {
     //console.log(response.data())
     return new Response(JSON.stringify(response.data()), {
         headers: {
-            "content-type": "application/json",
-            "Access-Control-Allow-Origin": "*",
+            "content-type": "application/json"
         }
     });
   }
@@ -60,8 +59,7 @@ serve(async (req) => {
       }
       return new Response("200", {
           headers: {
-              "content-type": "application/json",
-              "Access-Control-Allow-Origin": "*",
+              "content-type": "application/json"
           }
       });
   }
