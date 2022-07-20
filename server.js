@@ -23,6 +23,7 @@ serve(async (req) => {
   console.log(req.url)
   console.log(pathname)
   console.log(dirname(pathname))
+  console.log(pathname === "/public" || pathname === "/private")
   if (req.method === "GET" && dirname(pathname) === "/watchword") {
     const docRef = doc(db, "shiritori", decodeURI(basename(pathname)));
     const response = await getDoc(docRef)
