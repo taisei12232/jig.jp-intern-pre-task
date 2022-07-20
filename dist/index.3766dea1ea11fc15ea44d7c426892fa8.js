@@ -8037,6 +8037,8 @@ Error generating stack: ` + i6.message + `
     const { data } = fetchSinceWords("world");
     if (!data)
       return /* @__PURE__ */ Ye.createElement("div", null, "loading...");
+    const kogaki = ["\u3041", "\u3043", "\u3045", "\u3047", "\u3049", "\u3083", "\u3085", "\u3087", "\u308E"];
+    const big = ["\u3042", "\u3044", "\u3046", "\u3048", "\u304A", "\u3084", "\u3086", "\u3088", "\u308F"];
     const handleWord = (e3) => {
       if (data["words"].length !== 0) {
         if (data["words"].slice(-1)[0].slice(-1)[0] === "\u3093") {
@@ -8072,7 +8074,19 @@ Error generating stack: ` + i6.message + `
         return;
       }
       if (data["words"].length !== 0) {
+        const kogakiIndex = kogaki.findIndex((element) => element === data["words"].slice(-1)[0].slice(-1)[0]);
+        if (kogakiIndex != -1) {
+          if (big[kogakiIndex] !== word[0])
+            setResSentence("\u3057\u308A\u3068\u308A\u304C\u6210\u7ACB\u3057\u3066\u3044\u307E\u305B\u3093");
+          return;
+        }
         if (data["words"].slice(-1)[0].slice(-1)[0] === "\u30FC") {
+          const kogakiIndex2 = kogaki.findIndex((element) => element === data["words"].slice(-1)[0].slice(-2)[0]);
+          if (kogakiIndex != -1) {
+            if (big[kogakiIndex2] !== word[0])
+              setResSentence("\u3057\u308A\u3068\u308A\u304C\u6210\u7ACB\u3057\u3066\u3044\u307E\u305B\u3093");
+            return;
+          }
           if (data["words"].slice(-1)[0].slice(-2)[0] !== word[0]) {
             setResSentence("\u3057\u308A\u3068\u308A\u304C\u6210\u7ACB\u3057\u3066\u3044\u307E\u305B\u3093");
             return;
