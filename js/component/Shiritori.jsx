@@ -6,6 +6,8 @@ const Shiritori = () => {
     const [word,setWord] = useState("")
     const [resSentence,setResSentence] = useState("")
     const {data} = fetchSinceWords("world")
+    const kogaki = ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","ゎ"]
+    const big = ["あ","い","う","え","お","や","ゆ","よ","わ"]
     if(!data) return(<div>loading...</div>);
     const handleWord = (e) => {
         if(data["words"].length !== 0){

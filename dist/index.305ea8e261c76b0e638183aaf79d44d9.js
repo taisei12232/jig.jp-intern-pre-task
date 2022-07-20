@@ -8035,6 +8035,8 @@ Error generating stack: ` + i6.message + `
     const [word, setWord] = ze("");
     const [resSentence, setResSentence] = ze("");
     const { data } = fetchSinceWords("world");
+    const kogaki = ["\u3041", "\u3043", "\u3045", "\u3047", "\u3049", "\u3083", "\u3085", "\u3087", "\u308E"];
+    const big = ["\u3042", "\u3044", "\u3046", "\u3048", "\u304A", "\u3084", "\u3086", "\u3088", "\u308F"];
     if (!data)
       return /* @__PURE__ */ Ye.createElement("div", null, "loading...");
     const handleWord = (e3) => {
