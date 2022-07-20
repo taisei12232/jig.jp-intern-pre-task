@@ -58,6 +58,10 @@ serve(async (req) => {
       }
       else if(kogakiIndex != -1 || kogakiIndex2 != -1){
         if(data.words.slice(-1)[0].slice(-1)[0] === "ー"){
+          if(data.words.slice(-1)[0].slice(-2)[0] === reqJson.word[0]){
+            data.words.push(reqJson.word)
+            await updateDoc(docRef,{words:data.words})
+          }
           if(big[kogakiIndex2] === reqJson.word[0]){
             data.words.push(reqJson.word)
             await updateDoc(docRef,{words:data.words})
