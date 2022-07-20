@@ -64,7 +64,7 @@ const Shiritori = () => {
                         return
                     }
                 }
-                else if(data["words"].slice(-1)[0].slice(-2)[0] !== word[0]){
+                else if(data["words"].slice(-1)[0].slice(-2)[0] !== word[0] && kogakiIndex2 == -1){
                     setResSentence("しりとりが成立していません3")
                     return
                 }
