@@ -20,10 +20,7 @@ const db = getFirestore(app);
 serve(async (req) => {
   
   const pathname = new URL(req.url).pathname;
-  console.log(req.url)
-  console.log(pathname)
-  console.log(dirname(pathname))
-  console.log(pathname === "/public" || pathname === "/private")
+  //console.log(req.url)
   if (req.method === "GET" && dirname(pathname) === "/watchword") {
     const docRef = doc(db, "shiritori", decodeURI(basename(pathname)));
     const response = await getDoc(docRef)
