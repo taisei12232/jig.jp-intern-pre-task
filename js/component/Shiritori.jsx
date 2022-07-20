@@ -5,6 +5,7 @@ import { fetchSinceWords } from "./getSinceWords.jsx";
 const Shiritori = () => {
     const [word,setWord] = useState("")
     const [resSentence,setResSentence] = useState("")
+    const [isLoading,setIsLoading] = useState(false)
     const {data} = fetchSinceWords("world")
     const kogaki = ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","ゎ"]
     const big = ["あ","い","う","え","お","や","ゆ","よ","わ"]
@@ -77,8 +78,10 @@ const Shiritori = () => {
             setResSentence("既に使われている単語です")
             return
         }
+        setIsLoading(true)
         pushNextWord()
         setWord("")
+        setIsLoading(false)
     }
     const handleReset = async () => {
         await fetch("/delete/world", {
@@ -110,6 +113,9 @@ const Shiritori = () => {
                         : <div className="arrow">→</div>}
                 </div>
             ))}
+            {isLoading &&<div className="shiritori-word">
+                <div className="shiritoriword" key={"loading"}>loading...</div>
+            </div>}
         </div>
         <div className="reset"><button className="reset-btn" onClick={handleReset}>Reset</button></div>
     </div>)

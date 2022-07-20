@@ -8034,6 +8034,7 @@ Error generating stack: ` + i6.message + `
   var Shiritori = () => {
     const [word, setWord] = ze("");
     const [resSentence, setResSentence] = ze("");
+    const [isLoading, setIsLoading] = ze(false);
     const { data } = fetchSinceWords("world");
     const kogaki = ["\u3041", "\u3043", "\u3045", "\u3047", "\u3049", "\u3083", "\u3085", "\u3087", "\u308E"];
     const big = ["\u3042", "\u3044", "\u3046", "\u3048", "\u304A", "\u3084", "\u3086", "\u3088", "\u308F"];
@@ -8104,8 +8105,10 @@ Error generating stack: ` + i6.message + `
         setResSentence("\u65E2\u306B\u4F7F\u308F\u308C\u3066\u3044\u308B\u5358\u8A9E\u3067\u3059");
         return;
       }
+      setIsLoading(true);
       pushNextWord();
       setWord("");
+      setIsLoading(false);
     };
     const handleReset = async () => {
       await fetch("/delete/world", {
@@ -8147,7 +8150,12 @@ Error generating stack: ` + i6.message + `
       className: "arrow"
     }, "\u274C") : /* @__PURE__ */ Ye.createElement("div", {
       className: "arrow"
-    }, "\u2192")))), /* @__PURE__ */ Ye.createElement("div", {
+    }, "\u2192"))), isLoading && /* @__PURE__ */ Ye.createElement("div", {
+      className: "shiritori-word"
+    }, /* @__PURE__ */ Ye.createElement("div", {
+      className: "shiritoriword",
+      key: "loading"
+    }, "loading..."))), /* @__PURE__ */ Ye.createElement("div", {
       className: "reset"
     }, /* @__PURE__ */ Ye.createElement("button", {
       className: "reset-btn",
@@ -8160,6 +8168,7 @@ Error generating stack: ` + i6.message + `
   var Private = () => {
     const [word, setWord] = ze("");
     const [resSentence, setResSentence] = ze("");
+    const [isLoading, setIsLoading] = ze(false);
     const { search } = re();
     const kogaki = ["\u3041", "\u3043", "\u3045", "\u3047", "\u3049", "\u3083", "\u3085", "\u3087", "\u308E"];
     const big = ["\u3042", "\u3044", "\u3046", "\u3048", "\u304A", "\u3084", "\u3086", "\u3088", "\u308F"];
@@ -8230,7 +8239,9 @@ Error generating stack: ` + i6.message + `
         setResSentence("\u65E2\u306B\u4F7F\u308F\u308C\u3066\u3044\u308B\u5358\u8A9E\u3067\u3059");
         return;
       }
+      setIsLoading(true);
       pushNextWord();
+      setIsLoading(false);
       setWord("");
     };
     const pushNextWord = async () => {
@@ -8279,7 +8290,12 @@ Error generating stack: ` + i6.message + `
       className: "arrow"
     }, "\u274C") : /* @__PURE__ */ Ye.createElement("div", {
       className: "arrow"
-    }, "\u2192")))), /* @__PURE__ */ Ye.createElement("div", {
+    }, "\u2192"))), isLoading && /* @__PURE__ */ Ye.createElement("div", {
+      className: "shiritori-word"
+    }, /* @__PURE__ */ Ye.createElement("div", {
+      className: "shiritoriword",
+      key: "loading"
+    }, "loading..."))), /* @__PURE__ */ Ye.createElement("div", {
       className: "reset"
     }, /* @__PURE__ */ Ye.createElement("button", {
       className: "reset-btn",

@@ -4,6 +4,7 @@ import { fetchSinceWords } from "./getSinceWords.jsx";
 const Private = () => {
     const [word,setWord] = useState("")
     const [resSentence,setResSentence] = useState("")
+    const [isLoading,setIsLoading] = useState(false)
     const {search} = useLocation(); //なぜか動く
     const kogaki = ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","ゎ"]
     const big = ["あ","い","う","え","お","や","ゆ","よ","わ"]
@@ -77,7 +78,9 @@ const Private = () => {
             setResSentence("既に使われている単語です")
             return
         }
+        setIsLoading(true)
         pushNextWord()
+        setIsLoading(false)
         setWord("")
     }
     const pushNextWord = async () => {
@@ -114,6 +117,9 @@ const Private = () => {
                         : <div className="arrow">→</div>}
                 </div>
             ))}
+            {isLoading &&<div className="shiritori-word">
+                <div className="shiritoriword" key={"loading"}>loading...</div>
+            </div>}
         </div>
         <div className="reset"><button className="reset-btn" onClick={handleReset}>Reset</button></div>
     </div>)
