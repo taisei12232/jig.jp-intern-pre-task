@@ -27,7 +27,7 @@ serve(async (req) => {
     if(!response.exists()){
       const FirstRef = doc(db, "firstWords", "words");
       const first = await getDoc(FirstRef).data()
-      setDoc(docRef,{words:[first["words"][Math.floor(Math.random() * first["words"].length)]]})
+      await setDoc(docRef,{words:[first["words"][Math.floor(Math.random() * first["words"].length)]]})
     }
     //console.log(response.data())
     return new Response(JSON.stringify(response.data()), {
@@ -68,7 +68,7 @@ serve(async (req) => {
     const docRef = doc(db, "shiritori", decodeURI(basename(pathname)));
     const FirstRef = doc(db, "firstWords", "words");
     const first = await getDoc(FirstRef).data()
-    setDoc(docRef,{words:[first["words"][Math.floor(Math.random() * first["words"].length)]]})
+    await setDoc(docRef,{words:[first["words"][Math.floor(Math.random() * first["words"].length)]]})
     return new Response(200)
   }
   return serveDir(req, {
