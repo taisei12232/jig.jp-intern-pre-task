@@ -73,6 +73,11 @@ serve(async (req) => {
     await setDoc(docRef,{words:[firestWords["words"][Math.floor(Math.random() * firestWords["words"].length)]]})
     return new Response(200)
   }
+  else if(dirname(pathname) === "/public" || dirname(pathname) === "private"){
+    return new Response(await Deno.readTextFile("./dist/index.html"), {
+      headers: { "Content-Type": "text/html; charset=utf-8" },
+    });
+  }
   return serveDir(req, {
     fsRoot: "dist",
     urlRoot: "",
