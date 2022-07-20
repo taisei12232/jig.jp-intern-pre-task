@@ -16,6 +16,11 @@ const Shiritori = () => {
                 setWord("")
                 return
             }
+            else if(data["words"].slice(-1)[0].slice(-1)[0] === "ー" && data["words"].slice(-1)[0].slice(-2)[0] === "ん"){
+                setResSentence("最後に「ん」がつきました。Resetを押して最初からやり直してください。")
+                setWord("")
+                return
+            }
         }
         setWord(e.target.value);
         setResSentence("");
@@ -101,7 +106,7 @@ const Shiritori = () => {
             {data["words"].map(word => (
                 <div className="shiritori-word">
                     <div className="shiritoriword" key={word}>{word}</div>
-                    {word.slice(-1)[0] === "ん" ? <div className="arrow">❌</div>
+                    {word.slice(-1)[0] === "ん" || (word.slice(-1)[0] === "ー" && word.slice(-2)[0] === "ん") ? <div className="arrow">❌</div>
                         : <div className="arrow">→</div>}
                 </div>
             ))}

@@ -16,7 +16,7 @@ const Private = () => {
                 setWord("")
                 return
             }
-            else if(data["words"].slice(-1)[0].slice(-1)[0] === "ー" && ata["words"].slice(-1)[0].slice(-2)[0] === "ん"){
+            else if(data["words"].slice(-1)[0].slice(-1)[0] === "ー" && data["words"].slice(-1)[0].slice(-2)[0] === "ん"){
                 setResSentence("最後に「ん」がつきました。Resetを押して最初からやり直してください。")
                 setWord("")
                 return
