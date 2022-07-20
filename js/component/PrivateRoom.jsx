@@ -71,9 +71,8 @@ const Private = () => {
     }
     const handleReset = async () => {
         await fetch(`/delete/${query2.get("watchword")}`, {
-            mode: 'no-cors',
-            method: "DELETE",
-            headers: {"Access-Control-Allow-Origin": "*" }
+            mode: 'cors',
+            method: "DELETE"
         });
     }
     //console.log(data)

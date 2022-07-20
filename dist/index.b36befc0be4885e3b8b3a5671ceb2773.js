@@ -8091,7 +8091,7 @@ Error generating stack: ` + i6.message + `
     };
     const handleReset = async () => {
       await fetch("/delete/world", {
-        mode: "no-cors",
+        mode: "cors",
         method: "DELETE"
       });
     };
@@ -8207,9 +8207,8 @@ Error generating stack: ` + i6.message + `
     };
     const handleReset = async () => {
       await fetch(`/delete/${query2.get("watchword")}`, {
-        mode: "no-cors",
-        method: "DELETE",
-        headers: { "Access-Control-Allow-Origin": "*" }
+        mode: "cors",
+        method: "DELETE"
       });
     };
     if (!data)

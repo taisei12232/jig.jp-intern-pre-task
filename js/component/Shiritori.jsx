@@ -61,7 +61,7 @@ const Shiritori = () => {
     }
     const handleReset = async () => {
         await fetch("/delete/world", {
-            mode: 'no-cors',
+            mode: 'cors',
             method: "DELETE"
         });
     }
