@@ -53,14 +53,14 @@ const Shiritori = () => {
                 setResSentence("しりとりが成立していません")
                 return
             }
-            if(data["words"].slice(-1)[0].slice(-1)[0] === "ー"){
+            else if(data["words"].slice(-1)[0].slice(-1)[0] === "ー"){
                 const kogakiIndex2 = kogaki.findIndex(element => element === data["words"].slice(-1)[0].slice(-2)[0])
                 if(kogakiIndex != -1){
                     if(big[kogakiIndex2] !== word[0])
                     setResSentence("しりとりが成立していません")
-                        return
+                    return
                 }
-                if(data["words"].slice(-1)[0].slice(-2)[0] !== word[0]){
+                else if(data["words"].slice(-1)[0].slice(-2)[0] !== word[0]){
                     setResSentence("しりとりが成立していません")
                     return
                 }
