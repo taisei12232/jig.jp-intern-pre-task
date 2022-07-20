@@ -61,13 +61,13 @@ const Shiritori = () => {
     }
     const handleReset = async () => {
         await fetch("/delete/world", {
-            mode: 'cors',
+            mode: 'same-origin',
             method: "DELETE"
         });
     }
     const pushNextWord = async () => {
         const response = await fetch("/nextword", {
-            mode: 'no-cors',
+            mode: 'same-origin',
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ word,id:"world" })
