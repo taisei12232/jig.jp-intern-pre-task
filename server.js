@@ -62,12 +62,12 @@ serve(async (req) => {
             data.words.push(reqJson.word)
             await updateDoc(docRef,{words:data.words})
           }
+          else if(data.words.slice(-1)[0].slice(-2)[0] === reqJson.word[0]){
+            data.words.push(reqJson.word)
+            await updateDoc(docRef,{words:data.words})
+          }
         }
         else if(big[kogakiIndex] === reqJson.word[0]){
-          data.words.push(reqJson.word)
-          await updateDoc(docRef,{words:data.words})
-        }
-        else if(data.words.slice(-1)[0].slice(-2)[0] === reqJson.word[0]){
           data.words.push(reqJson.word)
           await updateDoc(docRef,{words:data.words})
         }
