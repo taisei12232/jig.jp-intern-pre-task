@@ -8076,7 +8076,7 @@ Error generating stack: ` + i6.message + `
       if (data["words"].length !== 0) {
         const kogakiIndex = kogaki.findIndex((element) => element === data["words"].slice(-1)[0].slice(-1)[0]);
         if (kogakiIndex != -1) {
-          if (big[kogakiIndex] !== word[0])
+          if (big[kogakiIndex] !== word[0] && data["words"].slice(-1)[0].slice(-1)[0] !== word[0])
             setResSentence("\u3057\u308A\u3068\u308A\u304C\u6210\u7ACB\u3057\u3066\u3044\u307E\u305B\u3093");
           return;
         }
