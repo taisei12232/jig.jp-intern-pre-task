@@ -18,8 +18,8 @@ const db = getFirestore(app);
 //console.log("Listening on http://localhost:8080");
 
 serve(async (req) => {
-  const kogaki = ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","ゎ","ゐ","ゑ"]
-  const big = ["あ","い","う","え","お","や","ゆ","よ","わ","い","え"]
+  const kogaki = ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","ゎ","ゐ","ゑ","を"]
+  const big = ["あ","い","う","え","お","や","ゆ","よ","わ","い","え","お"]
   const pathname = new URL(req.url).pathname;
   //console.log(req.url)
   if (req.method === "GET" && dirname(pathname) === "/watchword") {
