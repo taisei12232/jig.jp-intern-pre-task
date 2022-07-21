@@ -8037,8 +8037,8 @@ Error generating stack: ` + i6.message + `
     const [resSentence, setResSentence] = ze("");
     const [isLoading, setIsLoading] = ze(false);
     const { data } = fetchSinceWords("world");
-    const kogaki = ["\u3041", "\u3043", "\u3045", "\u3047", "\u3049", "\u3083", "\u3085", "\u3087", "\u308E", "\u3090", "\u3091"];
-    const big = ["\u3042", "\u3044", "\u3046", "\u3048", "\u304A", "\u3084", "\u3086", "\u3088", "\u308F", "\u3044", "\u3048"];
+    const kogaki = ["\u3041", "\u3043", "\u3045", "\u3047", "\u3049", "\u3083", "\u3085", "\u3087", "\u308E", "\u3090", "\u3091", "\u3092"];
+    const big = ["\u3042", "\u3044", "\u3046", "\u3048", "\u304A", "\u3084", "\u3086", "\u3088", "\u308F", "\u3044", "\u3048", "\u304A"];
     Ve(() => {
       setIsLoading(false);
     }, [data]);
@@ -8175,8 +8175,8 @@ Error generating stack: ` + i6.message + `
     const [resSentence, setResSentence] = ze("");
     const [isLoading, setIsLoading] = ze(false);
     const { search } = re();
-    const kogaki = ["\u3041", "\u3043", "\u3045", "\u3047", "\u3049", "\u3083", "\u3085", "\u3087", "\u308E", "\u3090", "\u3091"];
-    const big = ["\u3042", "\u3044", "\u3046", "\u3048", "\u304A", "\u3084", "\u3086", "\u3088", "\u308F", "\u3044", "\u3048"];
+    const kogaki = ["\u3041", "\u3043", "\u3045", "\u3047", "\u3049", "\u3083", "\u3085", "\u3087", "\u308E", "\u3090", "\u3091", "\u3092"];
+    const big = ["\u3042", "\u3044", "\u3046", "\u3048", "\u304A", "\u3084", "\u3086", "\u3088", "\u308F", "\u3044", "\u3048", "\u304A"];
     const query2 = new URLSearchParams(search);
     const { data } = fetchSinceWords(query2.get("watchword"));
     Ve(() => {

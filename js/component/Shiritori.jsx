@@ -7,8 +7,8 @@ const Shiritori = () => {
     const [resSentence,setResSentence] = useState("")
     const [isLoading,setIsLoading] = useState(false)
     const {data} = fetchSinceWords("world")
-    const kogaki = ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","ゎ","ゐ","ゑ"]
-    const big = ["あ","い","う","え","お","や","ゆ","よ","わ","い","え"]
+    const kogaki = ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","ゎ","ゐ","ゑ","を"]
+    const big = ["あ","い","う","え","お","や","ゆ","よ","わ","い","え","お"]
     useEffect(() => {
         setIsLoading(false)
     },[data])
