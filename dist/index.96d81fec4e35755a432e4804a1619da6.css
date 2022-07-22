@@ -3,6 +3,9 @@
   padding: 0;
 }
 
+html {
+  touch-action: manipulation;
+}
 body {
   background-color: #38C7FF;
 }
@@ -10,7 +13,9 @@ body {
 a {
   color: #333;
   text-decoration: none;
+  -webkit-appearance: none;
 }
+
 .app {
   font-size: 36px;
   font-weight: bold;
