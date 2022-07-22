@@ -30,7 +30,7 @@ const ModalWord = () => {
     return (
         <div className="component-modal-watchword" onClick={isClickOutside}>
             <div className="modal-watchword" onClick={handleModal}>
-                <p>合言葉を入力してね</p>
+                <p className="modaltext">合言葉を入力してね</p>
                 <input type="text" className="inputwatchword" value={watchword} autoComplete="off" onChange={handleWatchword}></input>
                 {isCorrectInput && <Link to={`/private?watchword=${watchword}`} className="submit-wraper"><button className="btn-room-submit">入室する！</button></Link>}
             </div> 

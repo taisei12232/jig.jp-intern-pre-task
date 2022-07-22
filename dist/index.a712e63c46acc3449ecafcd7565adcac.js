@@ -7564,7 +7564,9 @@ Error generating stack: ` + i6.message + `
     }, /* @__PURE__ */ Ye.createElement("div", {
       className: "modal-watchword",
       onClick: handleModal
-    }, /* @__PURE__ */ Ye.createElement("p", null, "\u5408\u8A00\u8449\u3092\u5165\u529B\u3057\u3066\u306D"), /* @__PURE__ */ Ye.createElement("input", {
+    }, /* @__PURE__ */ Ye.createElement("p", {
+      className: "modaltext"
+    }, "\u5408\u8A00\u8449\u3092\u5165\u529B\u3057\u3066\u306D"), /* @__PURE__ */ Ye.createElement("input", {
       type: "text",
       className: "inputwatchword",
       value: watchword,
