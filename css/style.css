@@ -81,7 +81,7 @@ form {
 
 .back > img
 {
-  width: 4vw;
+  width: max(4vh,4vw);
 }
 
 .component-modal-watchword {
