@@ -108,9 +108,9 @@ form {
 .inputwatchword {
   text-align: center;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 50px;
   margin: 10px auto;
-  font-size: max(5vh,5vw);
+  font-size: max(2vh,2vw);
 }
 
 .btn-room-submit {
