@@ -7,6 +7,7 @@
 
 ## Built With
 - Deno
+- Deno Deploy
 - Packup
 - React
 - SWR
