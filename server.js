@@ -11,7 +11,7 @@ import {
     setDoc,
     getFirestore,
 } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore-lite.js";
-import ip from "https://esm.sh/ip@1.1.8"
+//import ip from "https://esm.sh/ip@1.1.8"
 
 const firebaseConfig = JSON.parse(Deno.env.get("FIREBASE_CONFIG"));
 
@@ -20,7 +20,7 @@ const db = getFirestore(app);
 //console.log("Listening on http://localhost:8080");
 
 serve(async (req) => {
-  console.log(ip.address())
+  //console.log(ip.address())
   const kogaki = ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ","ゎ","ゐ","ゑ","を"]
   const big = ["あ","い","う","え","お","や","ゆ","よ","わ","い","え","お"]
   const pathname = new URL(req.url).pathname;
