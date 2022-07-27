@@ -27,6 +27,8 @@ const Shiritori = () => {
             }
         }
         setWord(e.target.value);
+        e.blur()
+        e.focus()
         setResSentence("");
     }
     const inputCheck = (e) => {
