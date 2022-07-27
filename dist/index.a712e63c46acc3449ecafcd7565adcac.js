@@ -8059,8 +8059,6 @@ Error generating stack: ` + i6.message + `
         }
       }
       setWord(e3.target.value);
-      e3.blur();
-      e3.focus();
       setResSentence("");
     };
     const inputCheck = (e3) => {
@@ -8199,8 +8197,6 @@ Error generating stack: ` + i6.message + `
         }
       }
       setWord(e3.target.value);
-      e3.blur();
-      e3.focus();
       setResSentence("");
     };
     const inputCheck = (e3) => {

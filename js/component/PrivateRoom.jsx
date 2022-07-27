@@ -27,8 +27,6 @@ const Private = () => {
             }
         }
         setWord(e.target.value);
-        e.blur()
-        e.focus()
         setResSentence("")
     }
     const inputCheck = (e) => {
