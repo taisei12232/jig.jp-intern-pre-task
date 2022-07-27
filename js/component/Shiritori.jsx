@@ -28,7 +28,9 @@ const Shiritori = () => {
             }
         }
         if(e.target.value.length !== 0){
+            console.log(grep.test(e.target.value.slice(-1)[0]))
             if(grep.test(e.target.value.slice(-1)[0]))
+                console.log("HELLO!")
                 setWord("")
         }
         setWord(e.target.value);
