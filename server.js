@@ -95,7 +95,7 @@ serve(async (req) => {
     return new Response(200)
   }
   else if(pathname === "/public" || pathname === "/private"){
-    console.log(pathname)
+    //console.log(pathname)
     return new Response(await Deno.readTextFile("./dist/index.html"), {
       headers: { "Content-Type": "text/html; charset=utf-8" },
     });
@@ -108,5 +108,6 @@ serve(async (req) => {
     urlRoot: "",
     showDirListing: true,
     enableCors: true,
+    quiet: true
   });
 });
