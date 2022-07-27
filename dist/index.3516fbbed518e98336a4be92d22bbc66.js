@@ -8059,13 +8059,6 @@ Error generating stack: ` + i6.message + `
           return;
         }
       }
-      if (e3.target.value.length !== 0) {
-        console.log(e3.target.value.slice(-1)[0]);
-        console.log(grep.test(e3.target.value.slice(-1)[0]));
-        if (grep.test(e3.target.value.slice(-1)[0]))
-          console.log("HELLO!");
-        setWord("");
-      }
       setWord(e3.target.value);
       setResSentence("");
     };
